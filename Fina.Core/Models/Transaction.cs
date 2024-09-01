@@ -1,4 +1,6 @@
-﻿namespace Fina.Core.Models
+﻿using Fina.Core.Enums;
+
+namespace Fina.Core.Models
 {
     public class Transaction
     {
@@ -8,7 +10,9 @@
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? PaidOrReceivedAt { get; set; }
 
-        public bool Type { get; set; }
+        public TransactionType Type { get; set; } = TransactionType.Withdraw;
+
+        public decimal Amount { get; set; }
 
         public long CategoryId { get; set; }
         public Category Category { get; set; } = null!;
