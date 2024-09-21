@@ -1,9 +1,9 @@
+using Fina.Core;
+using Fina.Core.Handlers;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Fina.Web;
 using MudBlazor.Services;
-using Fina.Core;
-using Fina.Core.Handlers;
 using Fina.Web.Handles;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

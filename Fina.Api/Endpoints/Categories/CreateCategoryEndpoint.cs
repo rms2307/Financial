@@ -22,7 +22,7 @@ namespace Fina.Api.Endpoints.Categories
             Response<Category> response = await handler.CreateAsync(request);
 
             return response.IsSuccess
-                  ? TypedResults.Created($"v1/categories/{response.Data?.Id}")
+                  ? TypedResults.Created($"v1/categories/{response.Data?.Id}", response)
                   : TypedResults.BadRequest();
         }
     }

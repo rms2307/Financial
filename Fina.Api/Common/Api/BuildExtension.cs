@@ -3,6 +3,8 @@ using Fina.Api.Infra;
 using Fina.Core;
 using Fina.Core.Handlers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations.Operations.Builders;
+using Microsoft.Extensions.Logging.Console;
 
 namespace Fina.Api.Common.Api
 {
@@ -37,8 +39,13 @@ namespace Fina.Api.Common.Api
                 opt => opt.AddPolicy(ApiConfiguration.CorsPolicyName, policy =>
                     policy.WithOrigins([Configuration.BackendUrl, Configuration.FrontendUrl,])
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials()));
+                        .AllowAnyHeader()));
+
+            //builder.Services.AddCors(
+            //    opt => opt.AddPolicy(ApiConfiguration.CorsPolicyName, policy =>
+            //        policy.AllowAnyOrigin()
+            //            .AllowAnyMethod()
+            //            .AllowAnyHeader()));
         }
 
         public static void AddServices(this WebApplicationBuilder builder)

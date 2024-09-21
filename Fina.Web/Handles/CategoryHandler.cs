@@ -16,7 +16,7 @@ namespace Fina.Web.Handles
             HttpResponseMessage result = await _client.PostAsJsonAsync("v1/categories", request);
 
             return await result.Content.ReadFromJsonAsync<Response<Category>>()
-                ?? new Response<Category>(null, (int)result.StatusCode, "Falha ao criar categoria");
+                ?? new Response<Category>(null, 400, "Falha ao criar categoria");
         }
 
         public async Task<Response<Category>> UpdateAsync(UpdateCategoryRequest request)

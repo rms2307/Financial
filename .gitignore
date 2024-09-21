@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+Fina.Api/FinaDB.db
+Fina.Api/FinaDB.db-shm
+Fina.Api/FinaDB.db-wal
